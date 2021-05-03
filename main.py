@@ -3,9 +3,7 @@ import re
 import pandas as pd
 
 
-def get_nucleotides_from_fastq(fastq_file):
-    with open(fastq_file) as in_f:
-        lines = in_f.readlines()
+def get_nucleotides_from_fastq(lines):
     nucleotide_lines = lines[1::4]
     return nucleotide_lines
 
@@ -25,7 +23,10 @@ if __name__ == '__main__':
     parser.add_argument('-o', '--output', type=str, help='Path to output file')
     args = parser.parse_args()
 
-    sequences = get_nucleotides_from_fastq(args.fastq)
+    with open(args.fastq) as in_f:
+        fastq_lines = in_f.readlines()
+        sequences = get_nucleotides_from_fastq(fastq_lines)
+
     guides_data = pd.read_csv(args.tsv, sep="\t")
     output_name = args.output
 
