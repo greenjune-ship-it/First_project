@@ -14,7 +14,7 @@ class MainCodeTest(unittest.TestCase):
             line = line.strip()
             for letter in line:
                 if letter not in allowed_symbols:
-                    self.fail(f"FastQ file contains unacceptable symbols")
+                    self.fail("FastQ file contains unacceptable symbols")
 
     def test_my_grep_calc(self):
         occurence = 2
