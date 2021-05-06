@@ -83,17 +83,18 @@ if __name__ == '__main__':
         os.mkdir(args.tmp)
     else:
         os.mkdir(args.tmp)
-        print("Make temporary directory...")
+        print("Make temporary directory.")
 
-    print("Writing nucleotides in tmp files...")
+    print("Read FastQ file...")
     # write nucleotides in several files for reading only them in mmap
     sequences = get_nucleotides_from_fq(args.fastq)
+    print("Writing nucleotides in tmp files...")
     number_of_files = 4
     sequences_split = np.array_split(sequences, number_of_files)
     for i, part in enumerate(sequences_split):
         with open(f'{args.tmp}/nucleotides_{i}.fa', 'wb') as nucl_f:
             nucl_f.write(b''.join(part))
-    print("--- %s seconds for parse FastQC file ---" % (process_time() - start_time))
+    print("--- %s seconds for parse FastQ file ---" % (process_time() - start_time))
 
     guides_data = pd.read_csv(args.tsv, sep="\t")
 
