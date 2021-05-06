@@ -6,18 +6,16 @@ class MainCodeTest(unittest.TestCase):
 
     def test_get_nucleotides_from_fastq(self):
         allowed_symbols = ("A", "T", "G", "C", "N")
-        simple_fastq = ["@S_chr13_33703600_130M/1\n",
-                        "TTCCTGGTTTGTGATCCTTGGGAATATGCACCACCAAA\n",
-                        "+\n",
-                        "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\n"]
-        for line in main.get_nucleotides_from_fastq(simple_fastq):
-            line = line.strip()
+        simple_fastq = 'test_data/test_get_nucleotides_from_fastq.txt'
+        bytes_str = main.get_nucleotides_from_fq(simple_fastq)
+        for line in bytes_str:
+            line = line.decode("utf-8").strip()
             for letter in line:
                 if letter not in allowed_symbols:
                     self.fail("FastQ file contains unacceptable symbols")
 
-    def test_my_grep_calc(self):
-        occurence = 2
+    def test_my_grep_calc_1(self):
+        occurence =
+        simple_nucl_file = 'test_data/test_my_grep_calc_1.txt'
         test_pattern = "ATGCACA"
-        test_lines = ("ATGCACACACA", "TGNTTTACGAA", "ATGCACAATGCACA")
-        self.assertEqual(main.my_grep_calc(test_pattern, test_lines), occurence)
+        self.assertEqual(main.mmap_grep_calc(test_pattern, simple_nucl_file), occurence)

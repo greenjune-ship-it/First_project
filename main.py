@@ -13,7 +13,7 @@ from time import process_time
 from memory_profiler import profile
 
 
-@profile
+#@profile
 def gunzip_fastq(file):
     import gzip
     import shutil
@@ -23,7 +23,7 @@ def gunzip_fastq(file):
             shutil.copyfileobj(in_f, out_f)
 
 
-@profile
+#@profile
 def get_nucleotides_from_fq(file_path):
     file_size = os.path.getsize(file_path)
     with open(file_path, "r+b") as f:
@@ -31,12 +31,12 @@ def get_nucleotides_from_fq(file_path):
         return [line for line in iter(map_file.readline, b"")][1::4]
 
 
-@profile
+#@profile
 def get_guides_from_file(df):
     return dict(zip(df.CODE, zip(df.GENES, df.EXONE)))
 
 
-@profile
+#@profile
 def mmap_grep_calc(pattern, file_path):
     pattern = pattern.encode('utf-8')
     with io.open(file_path, 'r', encoding='utf-8') as f:
@@ -45,7 +45,7 @@ def mmap_grep_calc(pattern, file_path):
         return len(re.findall(pattern, mmap_file))
 
 
-@profile
+#@profile
 def compute_results(i, nucl_f, guides_dict, tmp_folder):
     with open(f'{tmp_folder}/df_{i}.out', 'w') as out_f:
         out_f.write('gene\texone\toccurence\n')
