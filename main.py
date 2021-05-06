@@ -5,15 +5,18 @@ import io
 import mmap
 import shutil
 import argparse
+import tracemalloc
 import numpy as np
 import pandas as pd
 import multiprocessing
 from functools import reduce
 from time import process_time
-from memory_profiler import profile
 
 
-#@profile
+# from memory_profiler import profile
+
+
+# @profile
 def gunzip_fastq(file):
     import gzip
     import shutil
@@ -23,7 +26,7 @@ def gunzip_fastq(file):
             shutil.copyfileobj(in_f, out_f)
 
 
-#@profile
+# @profile
 def get_nucleotides_from_fq(file_path):
     file_size = os.path.getsize(file_path)
     with open(file_path, "r+b") as f:
@@ -31,12 +34,12 @@ def get_nucleotides_from_fq(file_path):
         return [line for line in iter(map_file.readline, b"")][1::4]
 
 
-#@profile
+# @profile
 def get_guides_from_file(df):
     return dict(zip(df.CODE, zip(df.GENES, df.EXONE)))
 
 
-#@profile
+# @profile
 def mmap_grep_calc(pattern, file_path):
     pattern = pattern.encode('utf-8')
     with io.open(file_path, 'r', encoding='utf-8') as f:
@@ -45,7 +48,7 @@ def mmap_grep_calc(pattern, file_path):
         return len(re.findall(pattern, mmap_file))
 
 
-#@profile
+# @profile
 def compute_results(i, nucl_f, guides_dict, tmp_folder):
     with open(f'{tmp_folder}/df_{i}.out', 'w') as out_f:
         out_f.write('gene\texone\toccurence\n')
@@ -66,6 +69,7 @@ if __name__ == '__main__':
     parser.add_argument('--tmp', type=str, nargs='?', default='tmp_files', help='Path to folder with temporary files')
     args = parser.parse_args()
 
+    tracemalloc.start()
     start_time = process_time()
 
     # check if file gzipped or not
@@ -132,5 +136,9 @@ if __name__ == '__main__':
     shutil.rmtree(args.tmp)
 
     print("--- %s seconds for whole main script ---" % (process_time() - start_time))
+
+    current, peak = tracemalloc.get_traced_memory()
+    print(f'Current memory usage is {current / 10 ** 6}MB; Peak was {peak / 10 ** 6}MB')
+    tracemalloc.stop()
 
     print("Done. Thank you.")

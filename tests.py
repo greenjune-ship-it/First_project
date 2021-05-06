@@ -15,7 +15,7 @@ class MainCodeTest(unittest.TestCase):
                     self.fail("FastQ file contains unacceptable symbols")
 
     def test_my_grep_calc_1(self):
-        occurence =
+        occurence = 2
         simple_nucl_file = 'test_data/test_my_grep_calc_1.txt'
         test_pattern = "ATGCACA"
         self.assertEqual(main.mmap_grep_calc(test_pattern, simple_nucl_file), occurence)

@@ -1,0 +1,927 @@
+C:\Users\Yulia_Iakovleva\PycharmProjects\First_project>python main.py -f .\test_data\test_large.fq -t .\test_data\test.tsv -o .\test_data\test_large.out
+Input file is recognized as unpacked.
+Temporary directory exists! Overwriting...
+Writing nucleotides in tmp files...
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    26     61.8 MiB     61.8 MiB           1   @profile
+    27                                         def get_nucleotides_from_fq(file_path):
+    28     61.8 MiB      0.0 MiB           1       file_size = os.path.getsize(file_path)
+    29     61.8 MiB      0.0 MiB           1       with open(file_path, "r+b") as f:
+    30     61.8 MiB      0.0 MiB           1           map_file = mmap.mmap(f.fileno(), length=file_size, access=mmap.ACCESS_READ)
+    31  19249.1 MiB -25389957356.0 MiB   119440771           return [line for line in iter(map_file.readline, b"")][1::4]
+
+
+--- 2262.53125 seconds for parse FastQC file ---
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    34  18549.1 MiB  18549.1 MiB           1   @profile
+    35                                         def get_guides_from_file(df):
+    36  18549.7 MiB      0.6 MiB           1       return dict(zip(df.CODE, zip(df.GENES, df.EXONE)))
+
+
+--- 0.015625 seconds for parse guide file ---
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18557.7 MiB  18557.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18557.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18557.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18557.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18557.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB    874.1 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.6 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19431.8 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    48  18557.5 MiB  18557.5 MiB           1   @profile
+    49                                         def compute_results(i, nucl_f, guides_dict, tmp_folder):
+    50  18557.6 MiB      0.1 MiB           1       with open(f'{tmp_folder}/df_{i}.out', 'w') as out_f:
+    51  18557.6 MiB      0.0 MiB           1           out_f.write('gene\texone\toccurence\n')
+    52  18557.6 MiB     -0.2 MiB          17           for guide in guides_dict:
+    53  18557.6 MiB  -1895.0 MiB          16               gene = guides_dict[guide][0]
+    54  18557.6 MiB  -1895.0 MiB          16               exone = guides_dict[guide][1]
+    55  18431.3 MiB  -2021.3 MiB          16               occurence = mmap_grep_calc(guide, nucl_f)
+    56  18431.3 MiB     -0.2 MiB          16               result = f'{gene}\t{exone}\t{occurence}\n'
+    57  18431.3 MiB     -0.2 MiB          16               out_f.write(result)
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18431.3 MiB  18431.3 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18431.3 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18431.3 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18431.3 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18431.3 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19359.1 MiB    927.8 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18358.6 MiB  18358.6 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18358.6 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18358.6 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18358.6 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18358.6 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19359.1 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18358.6 MiB  18358.6 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18358.6 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18358.6 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18358.6 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18358.6 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19359.1 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18358.6 MiB  18358.6 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18358.6 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18358.6 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18358.6 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18358.6 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19359.1 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18358.6 MiB  18358.6 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18358.6 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18358.6 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18358.6 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18358.6 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19359.1 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18358.6 MiB  18358.6 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18358.6 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18358.6 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18358.6 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18358.6 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19359.1 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18358.6 MiB  18358.6 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18358.6 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18358.6 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18358.6 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18358.6 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB    964.6 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19323.2 MiB   1000.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    48  18431.3 MiB  18431.3 MiB           1   @profile
+    49                                         def compute_results(i, nucl_f, guides_dict, tmp_folder):
+    50  18431.3 MiB      0.0 MiB           1       with open(f'{tmp_folder}/df_{i}.out', 'w') as out_f:
+    51  18431.3 MiB      0.0 MiB           1           out_f.write('gene\texone\toccurence\n')
+    52  18431.3 MiB   -359.6 MiB          17           for guide in guides_dict:
+    53  18431.3 MiB  -1413.9 MiB          16               gene = guides_dict[guide][0]
+    54  18431.3 MiB  -1413.9 MiB          16               exone = guides_dict[guide][1]
+    55  18358.6 MiB  -1522.6 MiB          16               occurence = mmap_grep_calc(guide, nucl_f)
+    56  18358.6 MiB   -359.6 MiB          16               result = f'{gene}\t{exone}\t{occurence}\n'
+    57  18358.6 MiB   -359.6 MiB          16               out_f.write(result)
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18322.7 MiB  18322.7 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18322.7 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18322.7 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18322.7 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18322.7 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    881.0 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  19203.6 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  18285.2 MiB  18285.2 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  18285.2 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  18285.2 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  18285.2 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  18285.2 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    457.2 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    48  18322.7 MiB  18322.7 MiB           1   @profile
+    49                                         def compute_results(i, nucl_f, guides_dict, tmp_folder):
+    50  18322.7 MiB      0.0 MiB           1       with open(f'{tmp_folder}/df_{i}.out', 'w') as out_f:
+    51  18322.7 MiB      0.0 MiB           1           out_f.write('gene\texone\toccurence\n')
+    52  18322.7 MiB  -1383.7 MiB          17           for guide in guides_dict:
+    53  18322.7 MiB  -1483.6 MiB          16               gene = guides_dict[guide][0]
+    54  18322.7 MiB  -1483.6 MiB          16               exone = guides_dict[guide][1]
+    55  18285.2 MiB  -1982.2 MiB          16               occurence = mmap_grep_calc(guide, nucl_f)
+    56  18285.2 MiB  -1383.7 MiB          16               result = f'{gene}\t{exone}\t{occurence}\n'
+    57  18285.2 MiB  -1383.7 MiB          16               out_f.write(result)
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.4 MiB    918.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.0 MiB  17824.0 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.0 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.0 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.0 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.0 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18742.5 MiB    918.5 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    39  17824.1 MiB  17824.1 MiB           1   @profile
+    40                                         def mmap_grep_calc(pattern, file_path):
+    41  17824.1 MiB      0.0 MiB           1       pattern = pattern.encode('utf-8')
+    42  17824.1 MiB      0.0 MiB           1       with io.open(file_path, 'r', encoding='utf-8') as f:
+    43  17824.1 MiB      0.0 MiB           1           file_size = os.path.getsize(file_path)
+    44  17824.1 MiB      0.0 MiB           1           mmap_file = mmap.mmap(f.fileno(), file_size, access=mmap.ACCESS_READ)
+    45  18614.5 MiB    790.4 MiB           1           return len(re.findall(pattern, mmap_file))
+
+
+Filename: C:\Users\Yulia_Iakovleva\PycharmProjects\First_project\main.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    48  17824.0 MiB  17824.0 MiB           1   @profile
+    49                                         def compute_results(i, nucl_f, guides_dict, tmp_folder):
+    50  17824.0 MiB      0.0 MiB           1       with open(f'{tmp_folder}/df_{i}.out', 'w') as out_f:
+    51  17824.0 MiB      0.0 MiB           1           out_f.write('gene\texone\toccurence\n')
+    52  17824.1 MiB   -128.0 MiB          17           for guide in guides_dict:
+    53  17824.1 MiB      0.0 MiB          16               gene = guides_dict[guide][0]
+    54  17824.1 MiB      0.0 MiB          16               exone = guides_dict[guide][1]
+    55  17824.1 MiB   -127.9 MiB          16               occurence = mmap_grep_calc(guide, nucl_f)
+    56  17824.1 MiB   -128.0 MiB          16               result = f'{gene}\t{exone}\t{occurence}\n'
+    57  17824.1 MiB   -128.0 MiB          16               out_f.write(result)
+
+
+--- 248.171875 seconds for grep guide data ---
+Remove temporary files and directory...
+--- 2512.171875 seconds for whole main script ---
+Done. Thank you.
