@@ -1,2 +1,2 @@
-# First_project
+# Training task
 Some description
