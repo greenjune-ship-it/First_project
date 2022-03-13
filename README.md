@@ -1,2 +1,2 @@
-# Training task
-Some description
+# Guides finder
+Search guides sequences in FASTQ file
